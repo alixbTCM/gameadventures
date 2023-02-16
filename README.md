@@ -1,20 +1,14 @@
-# WorkAdventure Map Starter Kit
+# WorkAdventure Lyon Map Scripting starter kit
 
-![map](./maps/map.png)
-
-This is a starter kit to help you build your own map for [WorkAdventure](https://workadventu.re).
-
-To understand how to use this starter kit, follow the tutorial at [https://workadventu.re/map-building](https://workadventu.re/map-building).
+This is a starter kit to help you build map for [WorkAdventure](https://workadventu.re) with pre-prepared scripts.
 
 ## Structure
-* *maps*: Map files
-    * *map.(json/tmj)*: Map file
-    * *map.png*: The map thumbnail displayed on the in-game map information
+* *maps*: All your map files
 * *public*: Static files like PDFs
 * *src*: Source files like scripts or PSDs. 
-* *tilesets*: All tilesets
-
-If you want to use more than one map file, just add the new map file in the /maps folder.
+  * *translations*: Translations files
+  * *utils*: All pre-created functions to help you build your scripts
+* *tilesets*: All the tilesets used in your maps
 
 If you are going to create custom websites to embed in the map, please reference the HTML files in the `input` option in *vite.config.js*.
 
