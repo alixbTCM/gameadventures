@@ -1,7 +1,6 @@
 import { discussion, hiddenZone, notifications, digicode, cameraMovingMode, inventory, arrayFilling, actionForAllPlayers, sounds, switchingTiles } from './modules'
 import {ActionMessage} from "@workadventure/iframe-api-typings";
 import * as utils from "./utils";
-import {initializeCameraMovingMode} from "./modules/cameraMovingMode";
 
 WA.onInit().then(async () => {
   let displayActionMessage: ActionMessage | null = null
