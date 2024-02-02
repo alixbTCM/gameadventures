@@ -1,5 +1,4 @@
-import {Position} from "@workadventure/iframe-api-typings/front/Api/Iframe/player";
-import {UIWebsite} from "@workadventure/iframe-api-typings";
+import {Position, UIWebsite} from "@workadventure/iframe-api-typings";
 import {rootLink} from "../config";
 
 type directionType = 'right' | 'left' | 'down' | 'up'
