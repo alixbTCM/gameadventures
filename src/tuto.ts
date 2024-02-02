@@ -187,6 +187,7 @@ WA.onInit().then(async () => {
   //   Chat action
   actionForAllPlayers.initializeActionForAllPlayers('chatAction', (variable: string|null) => {
     if (!!variable) {
+      // @ts-ignore
       WA.chat.sendChatMessage(`${variable} is saying "Hello !" to everyone on the map`, {scope: 'local', author: 'Voice over'});
     }
   })
@@ -284,6 +285,7 @@ WA.onInit().then(async () => {
       notifications.notify('WRONG !', 'ERROR', 'error')
 
       // Teleport player to begining of array filling
+      // @ts-ignore
       WA.player.teleport(832, 736);
     },
     () => {
