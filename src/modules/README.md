@@ -490,9 +490,6 @@ sounds.initiateSounds()
 sounds.playSoundForAll('successSound')
 ```
 
-## Workadventure Features
-This module is usefull to override base workadventure feature we don't want.
-
 ## Camera moving mode
 This module is used to move camera in the map. It includes a view with arrow and functions you can use to move to a specific point or on the sides.
 
