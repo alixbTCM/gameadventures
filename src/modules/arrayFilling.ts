@@ -10,7 +10,7 @@ const arrayFillingCoroutine = function * (possibleArrays: Array<Array<string>>, 
       let isTheSame = true
       for (let j = 0; j < currentArray.length; j++) {
         if (possibleArrays[i][j] === currentArray[j]) {
-          // Si c'est la même chose, alors on continue
+          // If it's the same then continue
           if (j === possibleArrays[i].length - 1) {
             hasBeenResolved = true
             callbackWhenResolved()

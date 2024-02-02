@@ -10,7 +10,6 @@ const getAvailableIndex = () => {
   const keys = Object.keys(notificationWebsite)
   const takenIndexes = []
   for (let i = 0; i < keys.length; i++) {
-    // @ts-ignore
     takenIndexes.push(notificationWebsite[keys[i]].index)
   }
 
