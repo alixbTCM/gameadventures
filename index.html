@@ -5,234 +5,212 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="robots" content="noindex">
-    <meta name="title" content="WorkAdventure Starter Kit">
+    <meta name="title" content="Lyon Game Adventures">
 
-    <link rel="icon" href="https://workadventu.re/favicon-96x96.png">
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
-    <title>WorkAdventure Starter Kit</title>
-    <script>
-        window.onload = function () {
-            const host = window.location.host;
-            let path = window.location.pathname;
-            if (path.endsWith('index.html')) {
-                path = path.substr(path, path.length - 'index.html'.length);
-            }
-            const instanceId = Math.random().toString(36).substring(2, 15);
-            const url = `https://play.workadventu.re/_/${instanceId}/${host}${path}maps/map.tmj`;
-            document.getElementById('testMapURL').href = url;
-            document.getElementById('testMapBtnURL').href = url;
-            document.getElementById('testMapURL').innerText = url;
+    <link rel="icon" href="images/pages/favicon.png">
 
-            const tmjURL = window.location.protocol + '//' + window.location.host + path + 'maps/map.tmj';
-            document.getElementById('tmjURL').innerText = tmjURL;
-
-            const gettingStartedLink = 'https://workadventu.re/getting-started?name=Map&mapUrl=' + tmjURL;
-            document.getElementById('gettingStartedLink').href = gettingStartedLink;
-
-        };
-    </script>
+    <link href="https://fonts.googleapis.com/css?family=New+Rocker" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Lyon Game Adventures</title>
     <style>
-        body {
-            font-size: 16px;
-            font-family: 'Open Sans', sans-serif;
-            max-width: 800px;
-            margin: auto !important;
-            text-align: center;
+        h1, h2 {
+            font-family: "New Rocker", Arial;
         }
 
-        h1,
-        h2 {
-            font-weight: bold;
+        .header-banner {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image:
+                    linear-gradient(150deg, rgba(235, 0, 255, 0.9), rgba(0, 255, 87, 0.9)),
+                    url('/images/pages/banner_background.png');
         }
 
-        header {
-            margin: 30px;
+        .bg-image-blue {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image:
+                    linear-gradient(45deg, rgba(81, 64, 186, 0.7), rgba(81, 64, 186, 0.7)),
+                    url('/images/pages/banner_background.png');
         }
 
-        header .logo {
-            display: block;
-            position: relative;
+        .bg-image-green {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image:
+                    linear-gradient(45deg, rgba(109, 224, 141, 0.7), rgba(109, 224, 141, 0.7)),
+                    url('/images/pages/banner_background.png');
         }
 
-        header .logo img {
-            display: block;
-            width: 500px;
-            margin: auto;
-            text-align: center;
+        .bg-image-pink {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image:
+                    linear-gradient(45deg, rgba(255, 141, 250, 0.7), rgba(255, 141, 250, 0.7)),
+                    url('/images/pages/banner_background.png');
         }
 
-        main {
-            margin-bottom: 30px;
-        }
-
-        .socials img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .socials>a {
-            display: inline-block;
-            margin: 20px 5px;
-        }
-
-        .content {
-            width: 100%;
-            position: relative;
-            z-index: 99999;
-        }
-
-        .content>h2 {
-            padding: 1rem 5vw;
-            max-width: 1200px;
-        }
-
-        a.button {
-            display: inline-block;
-            padding: 13px 20px 12px;
-            background: rgba(20, 48, 76, 0.9);
-            color: white;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-decoration: none;
-            text-align: center;
-            width: auto;
-            position: relative;
-            font-size: 1.8em;
-            margin-top: 2rem;
-        }
-
-        a.button:hover {
-            top: -3px;
-            background: rgba(20, 48, 76);
-            cursor: pointer;
-            color: white;
-        }
-
-
-        .maps {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .map {
-            width: 30%;
-            margin-bottom: 3%;
-            min-width: 200px;
-        }
-
-        .map a,
-        .map img {
-            width: 100%;
-            display: block;
-        }
-
-        .map a.button {
-            display: inline-block;
-            width: auto;
-            margin: 1rem auto;
-        }
-
-        .url {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 14px;
-        }
-
-        footer {
-            display: block;
-            font-size: 1.2em;
-            padding: 2rem 5vw;
-        }
-
-
-        /*/ MEDIA QUERIES START HERE /*/
-        @media (max-width: 768px) {
-            /* Hand Held Device */
-
-            body {
-                font-size: 13px;
-            }
-
-            .logo img {
-                width: 60vw;
-            }
-
-            .content {
-                padding: 1rem;
-            }
-
-            .maps {
-                gap: 1rem;
-            }
-
-            .map {
-                width: 47%;
-                margin-bottom: 3%;
-                min-width: 200px;
-            }
-
+        .bg-image-purple {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image:
+                    linear-gradient(45deg, rgba(165, 98, 231, 0.7), rgba(165, 98, 231, 0.7)),
+                    url('/images/pages/banner_background.png');
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <a href="https://workadventu.re/" target="_blank" title="Workadventure"><img
-                    src="https://workadventu.re/images/general/logo.svg" alt="WorkAdventure logo" /></a>
-        </div>
-    </header>
-    <main>
-        <div class="nes-container with-title is-centered" style="margin-top: 3rem">
-            <p class="title">Useful links</p>
-            <div class="content">
-                <div class="socials">
-                    <a href="https://discord.gg/G6Xh9ZM9aR" target="_blank" title="discord">
-                        <img src="https://workadventu.re/images/social/discord.png" alt="discord">
+<header>
+    <div class="header-banner text-white p-4">
+        <div>
+            <div class="max-w-[992px] m-auto text-center p-3">
+                <img src="images/pages/logo_with_slogan.svg" alt="Lyon Game Adventures - Jeux et team building sur WorkAdventure">
+                <div class="h-[1px] w-full bg-white mt-6 mb-6"></div>
+                <div class="text-lg sm:text-xl md:text-2xl grid grid-cols-2 md:grid-cols-4">
+                    <a href="https://thecodingmachine.com/contact/agence-de-developpement-lyon/" target="_blank">
+                        <div>
+                            Contact
+                        </div>
                     </a>
-                    <a href="https://github.com/thecodingmachine/workadventure" target="_blank" title="github">
-                        <img src="https://workadventu.re/images/social/github.png" alt="github">
+                    <a href="https://github.com/MorganeHuebraTCM/workadventureBaseTemplate" target="_blank">
+                        <div>
+                            Template
+                        </div>
                     </a>
-                    <a href="https://www.youtube.com/channel/UCXJ9igV-kb9gw1ftR33y5tA" target="_blank" title="youtube">
-                        <img src="https://workadventu.re/images/social/youtube.png" alt="youtube">
+                    <a href="" target="_blank" class="test-map-btn-url">
+                        <div>
+                            Tutoriel
+                        </div>
                     </a>
-                    <a href="https://twitter.com/Workadventure_" target="_blank" title="twitter">
-                        <img src="https://workadventu.re/images/social/twitter.png" alt="twitter">
+                    <a href="https://docs.workadventu.re/" target="_blank">
+                        <div>
+                            Workadventure
+                        </div>
                     </a>
-                    <a href="https://www.instagram.com/workadventure_" target="_blank" title="instagram">
-                        <img src="https://workadventu.re/images/social/instagram.png" alt="instagram">
-                    </a>
-                    <a href="https://www.linkedin.com/company/workadventu-re" target="_blank" title="linkedin">
-                        <img src="https://workadventu.re/images/social/linkedin.png" alt="linkedin">
-                    </a>
-                </div>
-
-                <div class="help">
-                    <a href="https://www.youtube.com/watch?v=lu1IZgBJJD4&list=PL7jmrMKZfjCnz36FvezxJ-Tshuh3Zz-nc&ab_channel=WorkAdventure"
-                        class="nes-btn is-primary" target="_blank">Watch tutorials</a>
-                    <a href="https://discord.gg/G6Xh9ZM9aR" class="nes-btn is-primary" target="_blank">Talk to the
-                        community</a>
                 </div>
             </div>
         </div>
-
-        <div class="nes-container with-title is-centered" style="margin-top: 1rem">
-            <p class="title">Test this map</p>
-            <p>You can test this map at <a id="testMapURL" href="" class="url"></a></p>
-            <p><a id="testMapBtnURL" href="" class="nes-btn is-primary">Test this map</a></p>
+    </div>
+</header>
+<main>
+    <div class="max-w-[992px] m-auto bg-white py-4">
+        <div class="mt-4">
+            <div class="text-center text-3xl mb-2">
+                <h1 class="text-fuchsia-900">Qui sommes-nous ?</h1>
+            </div>
+            <div class="mx-6">
+                Nous sommes une petite équipe de développeurs passionnés par les jeux vidéos et leur potentiel pour renforcer la cohésion d'équipe. Nous nous sommes fixé pour mission est de créer des expériences uniques de team building en utilisant la plateforme Workadventure. À travers nos aventures virtuelles, nous visons à offrir des moments ludiques et collaboratifs, pour renforcer les liens entre les membres de vos équipes.
+                <br>
+                Rejoignez-nous dans cette expérience où le plaisir et la collaboration se conjuguent !
+            </div>
         </div>
+        <div class="text-center mt-4">
+            <div>
+                <h1 class="text-3xl mb-2 text-fuchsia-900">
+                    Découvrez nos aventures !
+                </h1>
+                <div class="sm:grid grid-cols-2 md:grid-cols-3 mx-6">
+                    <a href="https://alixbtcm.github.io/Avalon-quest-TDM/" target="_blank" class="sm:m-2 hover:m-0">
+                        <div class="h-full w-full border-2 rounded-xl p-3 hover:m-0 hover:bg-gray-100">
+                            <div>
+                                <h2 class="text-2xl">Avalon Quest</h2>
+                            </div>
+                            <div class="lg:flex justify-center">
+                                <div class="flex items-center justify-center mr-3">
+                                    <i class="material-icons">group</i>
+                                    &nbsp;
+                                    1 joueur
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <i class="material-icons">timer</i>
+                                    &nbsp;
+                                    45 minutes
+                                </div>
+                            </div>
+                            <div class="h-[1px] w-[30%] bg-gray-300 m-auto my-3"></div>
 
-        <div class="nes-container with-title is-centered" style="margin-top: 1rem">
-            <p class="title">Happy with the result?</p>
-            <p>Register your room on Workadventu.re</p>
-            <p><a id="gettingStartedLink" href="" class="nes-btn is-primary">Publish this map</a></p>
-            <p>or copy and paste the map URL in WorkAdventu.re's administration panel:</p>
-            <p><span id="tmjURL" class="url"></span></p>
+                            <div>Parviendrez-vous à vous emparer d'excalibur ?</div>
+                        </div>
+                    </a>
+                    <a class="sm:m-2 hover:m-0" target="_blank" href="https://morganehuebra.github.io/WeasleyProject/">
+                        <div class="h-full w-full border-2 rounded-xl p-3 hover:m-0 hover:bg-gray-100">
+                            <div>
+                                <h2 class="text-2xl">Projet Weasley</h2>
+                            </div>
+                            <div class="lg:flex justify-center">
+                                <div class="flex items-center mr-3 justify-center">
+                                    <i class="material-icons">group</i>
+                                    &nbsp;
+                                    Nombre pair
+                                </div>
+                                <div class="flex items-center justify-center">
+                                    <i class="material-icons">timer</i>
+                                    &nbsp;
+                                    1 heure
+                                </div>
+                            </div>
+                            <div class="h-[1px] w-[30%] bg-gray-300 m-auto my-3"></div>
+                            <div>Parviendrez-vous, vous et votre accolyte, à sauver le monde ?</div>
+                        </div>
+                    </a>
+                    <div class="m-2 border-2 text-xl rounded-xl flex items-center justify-center flex-col border-dashed text-gray-500 p-3">
+                        <i class="material-icons">hourglass_bottom</i>
+                        Aventure en cours de développement
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
-    <footer><a href="https://workadventu.re/" target="_blank" title="workadventu.re">&copy; WorkAdventure</a></footer>
+        <div class="text-center mt-4">
+            <div>
+                <h1 class="text-3xl mb-2 text-fuchsia-900">Envie d'en savoir plus ?</h1>
+            </div>
+            <div class="sm:grid grid-cols-2 grid-rows-3 mx-6">
+                <a href="https://docs.workadventu.re/" target="_blank"  class="col-span-1 row-span-1 rounded-2xl p-10 bg-image-pink font-bold text-white flex flex-col items-center justify-center m-2 hover:m-0">
+                    Qu'est-ce que WorkAdventure ?<br>
+                    <span class="italic font-normal">Découvrez l'outil qui révolutionne le télétravail !</span>
+                </a>
+                <a href="" target="_blank" class="col-span-1 row-span-2 rounded-2xl p-10 bg-image-green font-bold text-white flex flex-col items-center justify-center m-2 hover:m-0 test-map-btn-url">
+
+                    Découvrez notre tutoriel<br>
+                    <span class="italic font-normal">pour avoir un apperçu de ce qu'il est possible de faire !</span>
+                </a>
+                <a href="https://github.com/MorganeHuebraTCM/workadventureBaseTemplate" target="_blank" class="col-span-1 row-span-1 rounded-2xl p-10 bg-image-purple font-bold text-white flex flex-col items-center justify-center m-2 hover:m-0">
+                    Notre template gratuit<br>
+                    <span class="italic font-normal">pour créer vos propres jeux !</span>
+                </a>
+                <a href="https://thecodingmachine.com/contact/agence-de-developpement-lyon/" target="_blank" class="col-span-2 row-span-1 rounded-2xl p-10 bg-image-blue font-bold text-white flex flex-col items-center justify-center m-2 hover:m-0">
+                    Contactez-nous<br>
+                    <span class="italic font-normal">si vous souhaitez obtenir des informations ou que nous développions une expérience sur-mesure pour vous !</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="border-t border-gray-300 w-[80%] m-auto"></div>
+    <div class="text-center p-4">
+        <span>© TheCodingMachine - 2024</span>
+        <br>
+        Made with <span class="text-pink-300">♥</span> by <a href="https://thecodingmachine.com/contact/agence-de-developpement-lyon/" target="_blank" class="text-pink-300">TheCodingMachine Lyon</a>
+    </div>
+</footer>
 </body>
 
 </html>
+
+<script>
+  window.onload = function () {
+    const host = window.location.host;
+    let path = window.location.pathname;
+    if (path.endsWith('index.html')) {
+      path = path.substr(path, path.length - 'index.html'.length);
+    }
+    const instanceId = Math.random().toString(36).substring(2, 15);
+    let elements = document.getElementsByClassName('test-map-btn-url');
+    console.log(elements);
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].href=`https://play.workadventu.re/_/${instanceId}/${host}${path}maps/map.tmj`
+    }
+  }
+</script>
